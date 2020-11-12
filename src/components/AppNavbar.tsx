@@ -8,7 +8,11 @@ interface Props {}
 const AppNavbar: React.FC<Props> = () => {
   return (
     <div className={styles.nav}>
-      <NavLink to="/"> Home </NavLink>
+      <NavLink className={styles.brand} to="/">
+        Home
+      </NavLink>
+      <NavLink to="/men-clothing">Men</NavLink>
+      <NavLink to="/women-clothing">Women</NavLink>
     </div>
   );
 };

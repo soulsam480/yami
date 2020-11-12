@@ -1,6 +1,6 @@
 ### yami
 
-A ecom web app built on react
+An ecom web app built on react
 
 stack:
 - React
