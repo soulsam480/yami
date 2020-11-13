@@ -6,4 +6,4 @@ stack:
 - React
 - shoyo
 - React Router
-- SASS
+- styled components
