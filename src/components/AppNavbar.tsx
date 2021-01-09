@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { colors } from "../styles/variables";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { colors } from '../styles/variables';
 //todo imports on top
 interface Props {}
 const Nav = styled.div`
@@ -9,8 +9,8 @@ const Nav = styled.div`
   top: 0;
   left: 0;
   position: fixed;
-  padding: 20px 0;
-  background-color: ${colors.bg};
+  padding: 15px 0;
+  background-color: ${colors.pr};
   z-index: 999;
   box-shadow: 0 1px 6px 0.5px rgba(145, 145, 145, 0.301);
   display: flex;
@@ -25,17 +25,19 @@ const Nav = styled.div`
   }
   .brand {
     padding: 0 15px;
+    font-weight: bold;
+    font-size: 20px;
   }
 `;
 
 const AppNavbar: React.FC<Props> = () => {
   return (
     <Nav>
-      <NavLink to="/" className="brand">
-        Home
+      <NavLink to='/' className='brand'>
+        Shoyo
       </NavLink>
-      <NavLink to="/men-clothing">Men</NavLink>
-      <NavLink to="/women-clothing">Women</NavLink>
+      <NavLink to='/men-clothing'>Men</NavLink>
+      <NavLink to='/women-clothing'>Women</NavLink>
     </Nav>
   );
 };
