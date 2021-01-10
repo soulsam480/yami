@@ -9,7 +9,7 @@ const Nav = styled.div`
   top: 0;
   left: 0;
   position: fixed;
-  padding: 15px 0;
+  padding: 10px 0;
   background-color: ${colors.pr};
   z-index: 999;
   box-shadow: 0 1px 6px 0.5px rgba(145, 145, 145, 0.301);

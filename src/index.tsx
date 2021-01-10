@@ -9,16 +9,14 @@ import 'shoyo/dist/main.css';
 const Global = createGlobalStyle`
   :root,body{
     background-color: ${colors.bg};
-    font-size: 14px;
+    font-size: 16px;
     padding:0;
     margin:0;
     font-family: 'Quicksand', sans-serif;
   }
   .content {
-    padding-top: 70px;
     width:100%;
-    padding-left:15px;
-    padding-right:15px;
+    padding:70px 5px 0 5px;
   }
   .btn {
     background-color: ${colors.pr};

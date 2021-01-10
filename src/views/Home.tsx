@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ProductModel } from '../models/models';
 import axios from 'axios';
-import AppProductCard from '../components/AppProductCard';
+import AppGrid from '../components/AppGrid';
 
 interface Props {}
 
@@ -14,17 +14,11 @@ const Home: React.FC<Props> = () => {
     }).then((res) => {
       setProducts(res.data);
     });
-  });
+  }, []);
   return (
     <div>
-      <div className='row'>
-        {products.map((el) => {
-          return (
-            <AppProductCard col={'col-md-3 col-xs-12 col-lg-3'}>
-              {/* <p key={el.id}>{el.id} </p>; */}
-            </AppProductCard>
-          );
-        })}
+      <div className='container c-lg'>
+        <AppGrid prodData={products.slice(0, 4)}></AppGrid>
       </div>
     </div>
   );

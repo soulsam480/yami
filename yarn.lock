@@ -9514,10 +9514,10 @@ shellwords@^0.1.1:
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
 
-shoyo@^0.1.3-alpha:
-  version "0.1.3-alpha"
-  resolved "https://registry.yarnpkg.com/shoyo/-/shoyo-0.1.3-alpha.tgz#4c5ebd77785122df48baf424eda99b3f784c2523"
-  integrity sha512-lhIaSDbnFf5qz3ZslygZqyYhgzt/lUh6C63AVd6fmKkg+ZvVawqb/vh6fS213APHcD1pcqro45wQbcIjzwwq3Q==
+shoyo@^0.1.4-alpha:
+  version "0.1.4-alpha"
+  resolved "https://registry.yarnpkg.com/shoyo/-/shoyo-0.1.4-alpha.tgz#6e101a6be43ac161e3a0c6a256f4e534d8e27fcd"
+  integrity sha512-90OU7IEBk0tJqLw4EjO9kqWoPykndnFBpqkOSfaVS1j6KOTc4kLcaJIadSZml78kKDdSya7VbayngfA0y94k1w==
 
 side-channel@^1.0.2:
   version "1.0.3"
