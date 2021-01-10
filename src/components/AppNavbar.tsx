@@ -34,10 +34,10 @@ const AppNavbar: React.FC<Props> = () => {
   return (
     <Nav>
       <NavLink to='/' className='brand'>
-        Shoyo
+        {`</yami/>`}
       </NavLink>
-      <NavLink to='/men-clothing'>Men</NavLink>
-      <NavLink to='/women-clothing'>Women</NavLink>
+      <NavLink to='/category/men'>Men</NavLink>
+      <NavLink to='/category/women'>Women</NavLink>
     </Nav>
   );
 };

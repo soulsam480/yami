@@ -21,8 +21,7 @@ const Grid = styled.div`
   .col-sm-6,
   .col-lg-3,
   .col-xs-6 {
-    padding-right: 5px;
-    padding-left: 5px;
+    padding: 5px;
   }
 `;
 
