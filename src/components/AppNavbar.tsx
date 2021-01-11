@@ -15,29 +15,41 @@ const Nav = styled.div`
   box-shadow: 0 1px 6px 0.5px rgba(145, 145, 145, 0.301);
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   a {
     display: inline-block;
     padding: 0 5px;
     color: #000 !important;
     text-decoration: none;
+    &:last-child {
+      padding-right: 15px;
+    }
   }
   .brand {
     padding: 0 15px;
     font-weight: bold;
     font-size: 20px;
   }
+  .left {
+  }
+  .right {
+  }
 `;
 
 const AppNavbar: React.FC<Props> = () => {
   return (
     <Nav>
-      <NavLink to='/' className='brand'>
-        {`</yami/>`}
-      </NavLink>
-      <NavLink to='/category/men'>Men</NavLink>
-      <NavLink to='/category/women'>Women</NavLink>
+      <div className='left'>
+        <NavLink to='/' className='brand'>
+          {`</yami/>`}
+        </NavLink>
+        <NavLink to='/category/men'>Men</NavLink>
+        <NavLink to='/category/women'>Women</NavLink>
+      </div>
+      <div className='right'>
+        <NavLink to='/category/men'>My Account</NavLink>
+      </div>
     </Nav>
   );
 };

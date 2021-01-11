@@ -19,12 +19,17 @@ const Global = createGlobalStyle`
     padding:70px 5px 0 5px;
   }
   .btn {
-    background-color: ${colors.pr};
+    background-color: ${colors.prd};
     color: black !important;
     &:hover {
-      background-color: ${colors.prd};
+      background-color: ${colors.pr};
       color: black !important;
     }
+  }
+  .input{
+    background-color: ${colors.prd};
+    border:none;
+    font-family: 'Quicksand', sans-serif;
   }
 `;
 ReactDOM.render(

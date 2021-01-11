@@ -16,7 +16,7 @@ const Women: React.FC<Props> = () => {
     }).then((res) => {
       setProducts(res.data);
     });
-  }, []);
+  }, [cat]);
   return (
     <div className='container c-lg'>
       <AppGrid prodData={products}></AppGrid>

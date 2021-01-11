@@ -7,11 +7,11 @@ interface Props {}
 
 const Product: React.FC<Props> = () => {
   const [product, setProduct] = useState<ProductModel>();
-  const { id } = useParams();
+  const { id }: { id: string } = useParams();
   useEffect(() => {
     Axios({
       method: 'get',
-      url: `https://fakestoreapi.com/products/${id}`,
+      url: `http://localhost:4000/product/${id}`,
     }).then((res) => {
       setProduct(res.data);
     });
