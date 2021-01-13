@@ -5,7 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AppNavbar from './components/AppNavbar';
 import { createGlobalStyle } from 'styled-components';
 import { colors } from './styles/variables';
+
 import 'shoyo/dist/main.css';
+import { RecoilRoot } from 'recoil';
 const Global = createGlobalStyle`
   :root,body{
     background-color: ${colors.bg};
@@ -34,11 +36,13 @@ const Global = createGlobalStyle`
 `;
 ReactDOM.render(
   <React.StrictMode>
-    <Global />
-    <Router>
-      <AppNavbar />
-      <App />
-    </Router>
+    <RecoilRoot>
+      <Global />
+      <Router>
+        <AppNavbar />
+        <App />
+      </Router>
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root'),
 );
