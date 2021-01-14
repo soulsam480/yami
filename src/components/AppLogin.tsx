@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { User } from '../models/models';
 import { Centered, Heading } from '../styled-components/Heading';
 import AppModal from './AppModal';
-
+import { useUser } from '../store';
 interface Props {}
 
-interface User {
-  email?: string;
-  password?: string;
-  username?: string;
-  name?: string;
-}
 const Login = styled.div`
   padding: 25px 0 20px 0;
 `;
@@ -33,6 +28,9 @@ const AppLogin: React.FC<Props> = () => {
       [target.name]: target.value,
     });
   };
+
+  const { login } = useUser();
+
   return (
     <div>
       <AppModal>
@@ -62,7 +60,9 @@ const AppLogin: React.FC<Props> = () => {
                 onChange={handleInput}
               />
             </div>
-            <button className='btn block'>Login</button>
+            <button className='btn block' onClick={() => login(user)}>
+              Login
+            </button>
             <br />
             <br />
             <Centered

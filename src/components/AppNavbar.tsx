@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { useUser } from '../store';
+import { useModal } from '../store/LoginModal';
 import { colors } from '../styles/variables';
 //todo imports on top
 interface Props {}
@@ -38,6 +40,8 @@ const Nav = styled.div`
 `;
 
 const AppNavbar: React.FC<Props> = () => {
+  const { userData } = useUser();
+  const { setModal } = useModal();
   return (
     <Nav>
       <div className='left'>
@@ -48,7 +52,11 @@ const AppNavbar: React.FC<Props> = () => {
         <NavLink to='/category/women'>Women</NavLink>
       </div>
       <div className='right'>
-        <NavLink to='/category/men'>My Account</NavLink>
+        {userData.user?.name ? (
+          <NavLink to='/user'> {userData.user?.name} </NavLink>
+        ) : (
+          <a onClick={() => setModal(true)}>Login/Register</a>
+        )}
       </div>
     </Nav>
   );

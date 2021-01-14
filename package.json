@@ -7,9 +7,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "recoil": "^0.1.2",
     "shoyo": "^0.1.4-alpha",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "zustand": "^3.3.1"
   },
   "scripts": {
     "start": "react-scripts start",

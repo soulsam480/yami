@@ -4,7 +4,8 @@ import Home from './views/Home';
 import Product from './views/Product';
 import User from './views/User';
 import Cat from './views/Cat';
-
+import { authState } from './utils/authState';
+authState();
 interface Props {}
 
 const App: React.FC<Props> = () => {

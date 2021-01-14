@@ -9,13 +9,19 @@ const Product: React.FC<Props> = () => {
   const [product, setProduct] = useState<ProductModel>();
   const { id }: { id: string } = useParams();
   useEffect(() => {
+    let ac = false;
     Axios({
       method: 'get',
       url: `http://localhost:4000/product/${id}`,
     }).then((res) => {
-      setProduct(res.data);
+      if (!ac) {
+        setProduct(res.data);
+      }
     });
-  });
+    return () => {
+      ac = true;
+    };
+  }, [id]);
   return (
     <div>
       <p>{product?.id}</p>

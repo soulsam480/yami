@@ -22,6 +22,7 @@ const Card = styled.div`
     .name {
       font-size: 18px;
       margin-bottom: 0;
+      padding-bottom: 5px;
     }
 
     .colors {
@@ -45,12 +46,14 @@ const AppProductCard: React.FC<Props> = ({ col, product }) => {
     <Card className={col}>
       <Link to={`/p/${product.id}`}>
         <div className='top'>
-          <img src='https://via.placeholder.com/500' alt={product.name} />
+          <img
+            src={`https://picsum.photos/seed/${product.id}/200`}
+            alt={product.name}
+          />
         </div>
         <div className='bottom'>
           <p className='name'>{product.name}</p>
           <p className='name'> ₹{product.price} </p>
-          <small>Colors</small>
           {product.colors.length > 0 ? (
             <div className='colors'>
               {product.colors.map((el) => {

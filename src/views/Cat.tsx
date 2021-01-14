@@ -10,12 +10,18 @@ const Women: React.FC<Props> = () => {
   const { cat }: { cat: string } = useParams();
   const [products, setProducts] = useState<Array<ProductModel>>([]);
   useEffect(() => {
+    let ac = false;
     axios({
       url: `http://localhost:4000/product/cat/${cat}`,
       method: 'get',
     }).then((res) => {
-      setProducts(res.data);
+      if (!ac) {
+        setProducts(res.data);
+      }
     });
+    return () => {
+      ac = true;
+    };
   }, [cat]);
   return (
     <div className='container c-lg'>
