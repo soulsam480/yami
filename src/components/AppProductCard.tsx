@@ -14,8 +14,8 @@ const Card = styled.div`
       vertical-align: middle;
       width: 100%;
       max-width: 100%;
-      border-radius: 2px;
-      padding: 0 0 5px 0;
+      border-radius: 4px;
+      margin: 0 0 5px 0;
     }
   }
   .bottom {

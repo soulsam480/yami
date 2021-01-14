@@ -36,7 +36,7 @@ const AppLogin: React.FC<Props> = () => {
       <AppModal>
         {isLogin ? (
           <Login>
-            <Heading size={'22px'}>
+            <Heading size={'22px'} isCenter={true}>
               <b>{`</yami/>`}</b>
             </Heading>
             <br />
@@ -75,7 +75,7 @@ const AppLogin: React.FC<Props> = () => {
           </Login>
         ) : (
           <Signup>
-            <Heading size={'22px'}>
+            <Heading size={'22px'} isCenter={true}>
               <b>{`</yami/>`}</b>
             </Heading>
             <br />
