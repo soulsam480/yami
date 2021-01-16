@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { User } from '../models/models';
 import { Centered, Heading } from '../styled-components/Heading';
 import AppModal from './AppModal';
 import { useUser } from '../store';
+import { useModal } from '../store/LoginModal';
 interface Props {}
 
 const Login = styled.div`
@@ -15,6 +16,8 @@ const Signup = styled.div`
 
 const AppLogin: React.FC<Props> = () => {
   const [isLogin, setLogin] = useState(true);
+  const { setModal } = useModal();
+  const { isLoggedIn, login, register } = useUser();
   const [user, setUser] = useState<User>({
     email: '',
     password: '',
@@ -29,7 +32,11 @@ const AppLogin: React.FC<Props> = () => {
     });
   };
 
-  const { login } = useUser();
+  useEffect(() => {
+    if (isLoggedIn) {
+      setModal(false);
+    }
+  }, [isLoggedIn, setModal]);
 
   return (
     <div>
@@ -58,6 +65,7 @@ const AppLogin: React.FC<Props> = () => {
                 value={user.password}
                 placeholder='Password'
                 onChange={handleInput}
+                onKeyDown={(e) => e.key === 'Enter' && login(user)}
               />
             </div>
             <button className='btn block' onClick={() => login(user)}>
@@ -118,9 +126,12 @@ const AppLogin: React.FC<Props> = () => {
                 className='input'
                 placeholder='Password'
                 onChange={handleInput}
+                onKeyDown={(e) => e.key === 'Enter' && register(user)}
               />
             </div>
-            <button className='btn block'>Sign Up</button>
+            <button className='btn block' onClick={() => register(user)}>
+              Sign Up
+            </button>
             <br />
             <br />
             <Centered

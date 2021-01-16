@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { useModal } from '../store/LoginModal';
 import { colors } from '../styles/variables';
+import useOutsideClick from '../utils/clickOutside';
 
 interface Props {}
 
 const AppModal: React.FC<Props> = (props) => {
+  const { isModal, setModal } = useModal();
+  const modalContainer = useRef<HTMLDivElement>(null);
+  useOutsideClick(modalContainer, () => {
+    if (isModal) {
+      setModal(false);
+    }
+  });
   return (
     <Modal>
       <div className='modal-overlay'>
         <div className='modal-box'>
-          <div className='modal-content'>{props.children}</div>
+          <div className='modal-content' ref={modalContainer}>
+            {props.children}
+          </div>
         </div>
       </div>
     </Modal>

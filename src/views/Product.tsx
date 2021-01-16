@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import AppSlider from '../components/AppSlider';
 import { ProductModel } from '../models/models';
 import { useUser } from '../store';
 import { colors } from '../styles/variables';
@@ -33,11 +34,7 @@ const Product: React.FC<Props> = () => {
     <ProductPage className='container c-lg'>
       <div className='row'>
         <div className='col-sm-12 col-xs-12 col-md-6 col-lg-6'>
-          <img
-            className='img'
-            src={`https://picsum.photos/seed/${product?.id}/500`}
-            alt={product?.name}
-          />
+          <AppSlider images={product?.images} showThumbnail></AppSlider>
         </div>
         <div className='col-sm-12 col-xs-12 col-md-6 col-lg-6'>
           <div className='product-specs'>
@@ -94,9 +91,9 @@ const Product: React.FC<Props> = () => {
             <QuantityContainer>
               <button
                 className='quantity_btn btn'
-                onClick={() => setQuantity(quantity + 1)}
+                onClick={() => quantity !== 1 && setQuantity(quantity - 1)}
               >
-                +
+                -
               </button>
               <input
                 type='number'
@@ -107,11 +104,12 @@ const Product: React.FC<Props> = () => {
                 min='1'
                 value={quantity}
               />
+
               <button
                 className='quantity_btn btn'
-                onClick={() => quantity !== 1 && setQuantity(quantity - 1)}
+                onClick={() => setQuantity(quantity + 1)}
               >
-                -
+                +
               </button>
             </QuantityContainer>
             <button className='btn block a2c' disabled={!isLoggedIn || !color}>

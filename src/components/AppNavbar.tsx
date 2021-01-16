@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useUser } from '../store';
 import { useModal } from '../store/LoginModal';
 import { colors } from '../styles/variables';
-//todo imports on top
+
 interface Props {}
 const Nav = styled.div`
   width: 100%;
@@ -32,10 +32,6 @@ const Nav = styled.div`
     padding: 0 15px;
     font-weight: bold;
     font-size: 20px;
-  }
-  .left {
-  }
-  .right {
   }
 `;
 

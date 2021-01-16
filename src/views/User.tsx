@@ -16,7 +16,7 @@ const UserImage = styled.img`
 `;
 
 const User: React.FC<Props> = () => {
-  const { userData } = useUser();
+  const { userData, logout } = useUser();
   return (
     <div className='container c-lg'>
       <div className='row center-xs'>
@@ -34,7 +34,9 @@ const User: React.FC<Props> = () => {
                 {userData.user?.name}{' '}
               </Heading>
               <p> {userData.user?.email} </p>
-              <button className='btn sm'>Logout</button>
+              <button className='btn sm' onClick={() => logout()}>
+                Logout
+              </button>
             </div>
           </div>
         </div>

@@ -33,12 +33,13 @@ export const authState = async () => {
       }
     } catch (error) {
       console.log(error);
-      localStorage.setItem('ref-tok', '');
+      localStorage.removeItem('ref-token');
+      useUser.setState({ userData: {}, isLoggedIn: false });
     }
     setTimeout(async () => {
       try {
         Axios({
-          method: 'post',
+          method: 'get',
           url: 'http://localhost:4000/token',
           headers: {
             'refresh-token': token,
@@ -49,6 +50,8 @@ export const authState = async () => {
         });
       } catch (err) {
         console.log(err);
+        localStorage.removeItem('ref-token');
+        useUser.setState({ userData: {}, isLoggedIn: false });
       }
     }, 840000);
   }

@@ -6,6 +6,8 @@ import AppNavbar from './components/AppNavbar';
 import { createGlobalStyle } from 'styled-components';
 import { colors } from './styles/variables';
 import 'shoyo/dist/main.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Global = createGlobalStyle`
   :root,body{

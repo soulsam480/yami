@@ -25,7 +25,8 @@ interface userState extends State {
   userData: userData;
   isLoggedIn: boolean;
   login: (state: UserLogin) => void;
-  register: (user: userSignup) => void;
+  register: (user: User) => void;
+  logout: () => void;
 }
 
 export const useUser = create<userState>((set) => ({
@@ -40,7 +41,6 @@ export const useUser = create<userState>((set) => ({
       },
     })
       .then((res: AxiosResponse<userData>) => {
-        console.log(res);
         localStorage.setItem('ref-token', res.data.refreshToken as string);
         set((state) => ({ userData: res.data, isLoggedIn: true }));
       })
@@ -49,7 +49,7 @@ export const useUser = create<userState>((set) => ({
         console.log(err);
       });
   },
-  register: async (user: userSignup) => {
+  register: async (user: User) => {
     await Axios({
       method: 'post',
       url: 'http://localhost:4000/auth/register',
@@ -65,5 +65,9 @@ export const useUser = create<userState>((set) => ({
         set((state) => ({ userData: {}, isLoggedIn: false }));
         console.log(err);
       });
+  },
+  logout: () => {
+    localStorage.removeItem('ref-token');
+    set((state) => ({ userData: {}, isLoggedIn: false }));
   },
 }));
