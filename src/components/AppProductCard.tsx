@@ -38,7 +38,7 @@ const ColorBox = styled.div`
   padding: 5px;
   background-color: ${(props) => props.color};
   border-radius: 2px;
-  border: 0.5px solid #ababab;
+  border: 0.5px solid #5e5e5e;
 `;
 
 const AppProductCard: React.FC<Props> = ({ col, product }) => {

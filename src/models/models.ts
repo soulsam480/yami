@@ -8,7 +8,16 @@ export interface ProductModel {
   notes: string;
   images: string[];
   colors: string[];
-  sizes: string[];
+  sizes: [
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'xxlarge',
+    'xxxlarge',
+    string,
+  ];
   categories: string[];
   tags: string[];
 }

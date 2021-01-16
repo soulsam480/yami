@@ -9,22 +9,7 @@ interface Props {}
 
 const Home: React.FC<Props> = () => {
   const [products, setProducts] = useState<Array<ProductModel>>([]);
-  const { isModal /* setModal */ } = useModal();
-
-  // const ref = useRef<HTMLDivElement>(null);
-  // const handleClickOutside = (event: any) => {
-  //   if (ref.current && ref.current.contains(event.target)) {
-  //     setModal(!isModal);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener('click', handleClickOutside, true);
-  //   return () => {
-  //     document.removeEventListener('click', handleClickOutside, true);
-  //   };
-  // });
-
+  const { isModal } = useModal();
   useEffect(() => {
     axios({
       url: 'http://localhost:4000/product',

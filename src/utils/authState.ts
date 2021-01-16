@@ -28,11 +28,12 @@ export const authState = async () => {
         });
 
         user.data
-          ? useUser.setState({ userData: user.data })
-          : useUser.setState({ userData: {} });
+          ? useUser.setState({ userData: user.data, isLoggedIn: true })
+          : useUser.setState({ userData: {}, isLoggedIn: false });
       }
     } catch (error) {
       console.log(error);
+      localStorage.setItem('ref-tok', '');
     }
     setTimeout(async () => {
       try {

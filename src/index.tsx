@@ -26,6 +26,10 @@ const Global = createGlobalStyle`
       background-color: ${colors.pr};
       color: black !important;
     }
+    &:disabled{
+      background-color: ${colors.prdisabled};
+      color: black !important;
+    }
   }
   .input{
     background-color: ${colors.prd};
